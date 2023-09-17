@@ -1,0 +1,330 @@
+{% extends 'base.html' %} {% block content %}
+
+<header class="container-fluid header-bg bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center">
+                <div class="hdr-text-box text-center">
+                    <h2 class="display-2"><b>About Us</b></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="book-list">
+    <div class="container grid-lg">
+        <div class="columns">
+            
+            <div class="column col-3 col-lg-6 col-sm-12 book-item">
+                <div class="book__image">
+                    <a href="/book/whydoweinterface/" title="Download Free Book: Why Do We Interface?">
+                        <img src="/assets/images/whydoweinterface.jpg" alt="Download Free Book: Why Do We Interface?" />
+                    </a>
+                </div>
+
+                <div class="book__info">
+                    <a class="book__name" href="/book/whydoweinterface/"
+                        title="Download Free Book: Why Do We Interface?">
+                        <h2 class="book__name-detail">Why Do We Interface?</h2>
+                    </a>
+
+                    <p class="book__short-des">
+                        In this piece we look at the past, present, and future of interfaces
+                        and how they allow us to utilize information in ways that change
+                        what it means to be human.
+                    </p>
+                    <a class="book__get" href="/book/whydoweinterface/"
+                        title="Download Free Book: Why Do We Interface?">
+                        Get the book
+                    </a>
+                </div>
+            </div>
+
+            <div class="column col-3 col-lg-6 col-sm-12 book-item">
+                <div class="book__image">
+                    <a href="/book/design-engineering-handbook/"
+                        title="Download Free Book: Design Engineering Handbook">
+                        <img src="/assets/images/design-engineering-handbook.jpg"
+                            alt="Download Free Book: Design Engineering Handbook" />
+                    </a>
+                </div>
+
+                <div class="book__info">
+                    <a class="book__name" href="/book/design-engineering-handbook/"
+                        title="Download Free Book: Design Engineering Handbook">
+                        <h2 class="book__name-detail">Design Engineering Handbook</h2>
+                    </a>
+
+                    <p class="book__short-des">
+                        Learn how design engineering, an essential discipline to creating
+                        great products, brings together form and function while accelerating
+                        innovation
+                    </p>
+                    <a class="book__get" href="/book/design-engineering-handbook/"
+                        title="Download Free Book: Design Engineering Handbook">
+                        Get the book
+                    </a>
+                </div>
+            </div>
+
+            <div class="column col-3 col-lg-6 col-sm-12 book-item">
+                <div class="book__image">
+                    <a href="/book/business-thinking-for-designers/"
+                        title="Download Free Book: Business Thinking for Designers">
+                        <img src="/assets/images/business-thinking-for-designers.jpg"
+                            alt="Download Free Book: Business Thinking for Designers" />
+                    </a>
+                </div>
+
+                <div class="book__info">
+                    <a class="book__name" href="/book/business-thinking-for-designers/"
+                        title="Download Free Book: Business Thinking for Designers">
+                        <h2 class="book__name-detail">Business Thinking for Designers</h2>
+                    </a>
+
+                    <p class="book__short-des">
+                        Bring a business mind to design, and transform your career and
+                        company, with this free book by Apple and Electronic Arts design
+                        veteran Ryan Rumsey
+                    </p>
+                    <a class="book__get" href="/book/business-thinking-for-designers/"
+                        title="Download Free Book: Business Thinking for Designers">
+                        Get the book
+                    </a>
+                </div>
+            </div>
+
+            <div class="column col-3 col-lg-6 col-sm-12 book-item">
+                <div class="book__image">
+                    <a href="/book/avocode-ui-design-report-2017/"
+                        title="Download Free Book: Avocode 2017 UI Design Report">
+                        <img src="/assets/images/avocode-ui-design-report-2017.jpg"
+                            alt="Download Free Book: Avocode 2017 UI Design Report" />
+                    </a>
+                </div>
+
+                <div class="book__info">
+                    <a class="book__name" href="/book/avocode-ui-design-report-2017/"
+                        title="Download Free Book: Avocode 2017 UI Design Report">
+                        <h2 class="book__name-detail">Avocode 2017 UI Design Report</h2>
+                    </a>
+
+                    <p class="book__short-des">
+                        UI design trends based on data from over 2,000,000 Sketch and
+                        Photoshop designs that were uploaded to Avocode in 2017
+                    </p>
+                    <a class="book__get" href="/book/avocode-ui-design-report-2017/"
+                        title="Download Free Book: Avocode 2017 UI Design Report">
+                        Get the book
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns book-pagination">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="/category/visual-design/" class="page-link" aria-label="First"><span
+                            aria-hidden="true">&laquo;&laquo;</span></a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="/category/visual-design/">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="/category/visual-design/page/2/">2</a>
+                </li>
+                <li class="page-item">
+                    <a href="/category/visual-design/page/2/" class="page-link" aria-label="Next"><span
+                            aria-hidden="true">&raquo;</span></a>
+                </li>
+                <li class="page-item">
+                    <a href="/category/visual-design/page/2/" class="page-link" aria-label="Last"><span
+                            aria-hidden="true">&raquo;&raquo;</span></a>
+                </li>
+            </ul>
+        </div>
+
+        {% endblock content %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- working code -->
+
+{% extends 'base.html' %} {% block content %}
+
+<header class="container-fluid header-bg bg-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="hdr-text-box text-center">
+          <h2 class="display-4">About Us</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="container py-4">
+  <div class="p-5 mb-1 bg-light text-center">
+    <div class="container">
+      <h5>Are you an avid reader, always on the lookout for your next literary adventure? Love cuteness and cat puns? Look no further than Check Meowt, a site for your favorite book lists.</h5>
+      <br>
+      <h5><b>How it works</b></h5>
+      <ul>
+        <li>Book Discovery: Explore a vast collection of books spanning various genres. Find your next page-turner with ease.</li>
+        <li>Author Information: Get to know the brilliant minds behind your favorite books. Discover their works and learn more about their literary journeys.</li>
+        <li>Book Details: Dive deep into the world of books. Access essential information like ISBN numbers, book titles, authors, and more.</li>
+        <li>Reading Preferences: Filter books by format- whether it's a cozy hardcover or a convenient paperback, we've got you covered.</li>
+        <li>Personal Library: Create your virtual bookshelf. Keep track of books you've read, want to read, or are currently reading.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="container py-1">
+  <div class="p-5 mb-3 bg-light text-center">
+    <div class="container py-1">
+
+      <div id="browse-box" class="row">
+                              <!--  justify-content-start -->
+        <div class="col">
+          <h5>Search and browse books</h5>
+          <div class="container-fluid" style="width: 315px;">
+            <form class="d-flex" role="search">
+              <input id="sitesearch_field" class="form-control me-2" type="search" name="query" placeholder="Title / Author / ISBN" aria-label="Search">
+              <button class="btn btn-outline-info" type="submit" disabled>Search</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-right">
+            <h5>What do i read next?</h5>
+            <p>Tell us what titles or genres you've enjoyed in the past, and we'll give you surprisingly insightful recommendations. </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<div class="book-list py-4">
+<div class="container grid-lg">
+<div class="row" style="display: flex; flex-wrap:wrap;">
+
+<div class="column col-3 col-lg-6 col-sm-12 book-item">
+<div class="book_image">
+<a href="#" title="Download: Book">
+<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586243000i/50698873.jpg" alt="" />
+</a>
+</div>
+
+<div class="book_info">
+<a class="book_name" href="https://www.goodreads.com/book/show/50698873-modern-full-stack-development" target="_blank">
+<h2 class="book_name-detail">Modern Full-Stack Development</h2>
+</a>
+<p class="book_author">Author: Frank Zammetti</p>
+<p class="book_pub">Published: January 1, 2020 by Apress</p>
+<p class="book_format">Format: 395 pages, Paperback </p>
+<p class="book_isbn">ISBN: 9781484257371 (ISBN10: 1484257375)</p>
+<a class="book_get disabled" href="#">Add to list</a>
+</div>
+</div>
+
+<div class="column col-3 col-lg-6 col-sm-12 book-item">
+<div class="book_image">
+<a href="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1401432508i/4099.jpg" target="_blank">
+<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1401432508i/4099.jpg" alt="" />
+</a>
+</div>
+<div class="book_info">
+<a class="book_name" href="https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer" target="_blank">
+<h2 class="book_name-detail">The Pragmatic Programmer</h2>
+</a>
+<p class="book_author">Author: Andy Hunt, Dave Thomas</p>
+<p class="book_pub">Published: October 20, 1999 by Addison-Wesley Professional</p>
+<p class="book_format">Format: 321 pages, Paperback</p>
+<p class="book_isbn">ISBN: 9780201616224 (ISBN10: 020161622X)</p>
+<a class="book_get disabled" href="#">Add to list</a>
+</div>
+</div>
+
+<div class="column col-3 col-lg-6 col-sm-12 book-item">
+<div class="book_image">
+<a href="" title="Download: Book">
+<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1524256229i/38212134.jpg" alt="" />
+</a>
+</div>
+<div class="book_info">
+<a class="book_name" href="https://www.goodreads.com/book/show/38212134-how-the-internet-happened" target="_blank">
+<h2 class="book__name-detail">How the Internet Happened: From Netscape to the iPhone</h2>
+</a>
+<p class="book_author">Author: Brian McCullough</p>
+<p class="book_pub">Published: October 23, 2018 by Liveright</p>
+<p class="book_format">Format: 384 pages, Hardcover</p>
+<p class="book_isbn">ISBN: 9781631493072 (ISBN10: 1631493078)</p>
+<a class="book_get disabled" href="#">Add to list</a>
+</div>
+</div>
+
+<div class="column col-3 col-lg-6 col-sm-12 book-item">
+<div class="book_image">
+<a href="#">
+<img src="/static/images/book_placeholder.png" alt="" />
+</a>
+</div>
+<div class="book_info">
+<a class="book_name" href="/book/your_book" title="Download: Book">
+<h2 class="book_name-detail">Your Book Here!</h2>
+</a>
+<p class="book_author">Author: </p>
+<p class="book_pub">Published: </p>
+<p class="book_format">Format: </p>
+<p class="book_isbn">ISBN: </p>
+<a class="book_get disabled" href="#">Add to list</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- end book list -->
+
+    <div class="columns book-pagination">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    {% endblock content %}

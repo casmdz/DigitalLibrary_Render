@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<header class="container-fluid header-bg bg-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="hdr-text-box text-center">
+          <h1 class="display-3">Check Meowt Digital Library</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- main-->
+<section class="container py-3">
+  <div class="p-5 mb-4 bg-light text-center">
+    <div class="container py-1">
+      <h2>Welcome to Check Meowt - Your Purr-fect Reading Companion!</h2>
+      <p>Check Meowt is your go-to digital library for discovering, reading, and exploring a world of books. 📚🐱</p>
+      <p>We've put a feline twist on "Check Me Out" to bring you "Check Meowt"... place where bookworms and cat lovers unite!</p>
+      <p>Happy Reading! 📖🐾</p>
+
+
+      <div id="myCarousel" class="carousel carousel-dark slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/images/bookstack1_jeroen-den-otter.jpg" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/bookstack2_karl-solano.jpg" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/bookstack4_jodie-cook.jpg" alt="Image 3">
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

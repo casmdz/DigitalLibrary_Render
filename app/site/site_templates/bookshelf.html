@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="container-fluid header-bg bg-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center">
+        <div class="hdr-text-box text-center">
+          <h2 class="display-4">Bookshelf</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="book-list py-4">
+  <div class="container">
+    <div class="row">
+      {% for book in user_books %}
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="book-item">
+          <div class="book_image">
+            <a href="#">
+              <img src="/static/images/book_placeholder.png" alt="" />
+            </a>
+          </div>
+          <div class="book_info">
+            <h2 class="book__name-detail">{{ book.title }}</h2>
+            <p class="book_author">Author:
+              {% for author in book.author.split(', ') %}
+                {{ author | replace("{", "") | replace("}", "") }}
+                {% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </p>
+            <p class="book_pub">Published: {{ book.publishing }}</p>
+            <p class="book_format">Format: {{ book.format }}</p>
+            <p class="book_isbn">ISBN: {{ book.isbn }}</p>
+            <p class="book_genre">Genre:
+              {% for genre in book.genre.split(', ') %}
+                {{ genre | replace("{", "") | replace("}", "") }}
+                {% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

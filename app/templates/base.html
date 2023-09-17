@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- caro -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../static/css/main.css">
+  <title>Check Meowt</title>
+</head>
+
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+    <div class="container">
+      <a href="{{ url_for('site.home') }}" class="navbar-brand">Check Meowt
+        <img src="" height="50rem" alt="">
+
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="{{ url_for('site.home') }}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('site.about') }}" class="nav-link">About</a>
+          </li>
+
+          {% if current_user.is_authenticated %}
+
+          <li class="nav-item">
+            <a href="{{ url_for('auth.profile') }}" class="nav-link">Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('site.bookshelf') }}" class="nav-link">{{ current_user.first_name }}'s Library</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a>
+          </li>
+
+          {% else %}
+          <li class="nav-item">
+            <a href="{{ url_for('auth.login') }}" class="nav-link">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('auth.register') }}" class="nav-link">Sign Up</a>
+          </li>
+          {% endif %}
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  {% block body %}{% endblock %}
+
+
+  <main class="container">
+    <div class="row">
+      <div class="col-md-12 pt-2">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show w-50 mx-auto" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <!-- body -->
+      </div>
+    </div>
+  </main>
+  {% block content %}
+  {% endblock %}
+
+  <!-- footer -->
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+
+        <span class="mb-3 mb-md-0 text-body-secondary">2023 Check Meowt, Inc</span>
+
+      </div>
+
+
+      <div class="copyright text-body-secondary">All featured works &copy; of their respective owners.</div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#">sdadsad</a></li>
+
+        <li class="fs-2 ms-3"><a class="text-body-secondary" href="mailto:t4mendez@gmail.com" target="_blank"
+            rel="noopener noreferrer"><i class="bi bi-envelope-at"></i></a></li>
+        <li class="fs-2 ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/casmdz/" target="_blank"
+            rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a></li>
+        <!-- class="fs-2 mb-3" style="font-size:48px;"-->
+        <li class="fs-2 ms-3"><a class="text-body-secondary" href="https://github.com/casmdz" target="_blank"
+            rel="noopener noreferrer"><i class="bi bi-github"></i></a></li>
+      </ul>
+
+
+    </footer>
+  </div>
+
+
+
+  <!-- end -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+  <!-- caro -->
+  <script>
+    $(document).ready(function () {
+      $('#myCarousel').carousel();
+    });
+  </script>
+
+
+</body>
+
+</html>

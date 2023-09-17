@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container p-5">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h2>Create Your Account</h2>
+
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+
+                    <fieldset id="firstname-field" required>
+                        {{ form.first_name.label }}
+                        {{ form.first_name(class = "form-control", placeholder = "Enter First Name Here...")}}
+                        <div class="invalid-feedback">
+                            Please enter your first name.
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="lastname-field">
+                        {{ form.last_name.label }}
+                        {{ form.last_name(class = "form-control", placeholder = "Enter Last Name Here...")}}
+                    </fieldset>
+
+                    <fieldset id="email-field">
+                        {{ form.email.label }}
+                        {{ form.email(class = "form-control", placeholder = "Enter Email Here...")}}
+                    </fieldset>
+                    <fieldset id="username-field">
+                        {{ form.username.label }}
+                        {{ form.username(class = "form-control", placeholder = "Create your username...")}}
+                    </fieldset>
+
+                    <fieldset id="pass-field">
+                        {{ form.password.label }}
+                        {{ form.password(class = "form-control", placeholder = "Create a secure Password...")}}
+                    </fieldset>
+                    <fieldset id="confirm-pass-field" >
+                        {{ form.confirm_password.label }}
+                        {{ form.confirm_password(class = "form-control", placeholder = "Confirm your password...")}}
+                    </fieldset>
+                    {{ form.submit_button(class = "btn btn-primary btn-block") }}
+                </div>
+            </form>
+
+        </aside>
+    </div>
+</main>
+{% endblock %}
