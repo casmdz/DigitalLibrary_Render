@@ -16,14 +16,7 @@ from helpers import JSONEncoder
 
 
 app = Flask(__name__)
-# app.debug = True
-#   flask --app __init__.py --debug run
-# flask --app app:app --debug run
 
-
-# @app.route("/")
-# def hello_world():
-#     return "<p>Hello, World! Is anybody out there? Just nod if you can hear me. Is there anyone at home?</p>"
 
 # loader = FileSystemLoader("static")
 

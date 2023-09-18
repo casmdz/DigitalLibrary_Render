@@ -1,0 +1,144 @@
+
+
+I should be able to write API calls for your app from Insomnia to test the functionality of the app after I log in to get a token.
+
+- A digital library app, including data points for things like ISBN numbers, author name, book title, book length, whether it's hardcover or paperback, etc. 
+No need to give our books a full text body here since that'll get out of hand quickly with the length of data. 
+
+
+
+Remember, these should basically be structured identically to the Phonebook thus far - the phonebook doesn't display contacts, but it allows users to authenticate, and the API tests we run in Insomnia return the expected data. 
+
+We will be making a front-end website to display our data in Module 7, so your API routes will need to work in Insomnia before you move forward. You may also have to use Google to research new techniques and tools for storing data.
+
+If you've made the library app, for example, please make sure you have 2-3 books stored on the database so I can see that you've successfully added them, and your app works as it is supposed to.
+
+
+my_library_app/
+│
+├── app/
+│   ├── __init__.py
+│   ├── api/
+│       └──routes.py
+│   ├── authentication/
+│       ├──auth_templates/
+│           ├── login.html
+│           └── register.html
+│       └──routes.py
+│   ├── site/
+│       ├──site_templates/
+│           ├── about.html
+│           ├── index.html
+│           ├── bookshelf.html
+│           └── profile.html
+│       └──routes.py
+│   └── static/
+│       └── images/
+│       ├── base.html
+│       └── forms.html
+│
+├── my_venv/
+├── .env
+├── config.py
+├── forms.py
+├── helpers.py
+├── models.py
+└── requirements.txt
+
+
+
+
+import os
+from dotenv import load_dotenv
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
+class Config():
+    '''
+        Set config variables for the flask app
+        Using Environment variables where available.
+        Otherwise create the config variable if not done already
+    '''
+
+
+    FLASK_APP = os.getenv('FLASK_APP')
+    FLASK_ENV = os.getenv('FLASK_ENV')
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'Ryan will never get access to my CSS'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+    C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\my_venv\Lib\site-packages\flask_marshmallow\__init__.py:25: UserWarning: Flask-SQLAlchemy 
+integration requires marshmallow-sqlalchemy to be installed.
+  warnings.warn
+
+  https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
+
+  ================================================================
+
+    File "C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\forms.py", line 14, in UserRegistrationForm
+    email = StringField('Email', validators=[DataRequired(), Email()])
+                                                             ^^^^^^^
+  File "C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\my_venv\Lib\site-packages\wtforms\validators.py", line 393, in __init__
+    raise Exception("Install 'email_validator' for email validation support.")
+Exception: Install 'email_validator' for email validation support.
+
+================================================================
+C:\USERS\TREEO\DESKTOP\CODING TEMPLE SELF PACE\MODULE 5 FLASK\FLASK_DIGITALLIBRARY\APP
+├───api
+│   └───__pycache__
+├───authentication
+│   ├───auth_templates
+│   └───__pycache__
+├───site
+│   ├───site_templates
+│   └───__pycache__
+├───static
+│   ├───css
+│   ├───images
+│   └───profile_pics
+├───templates
+└───__pycache__
+
+
+
+https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
+
+https://stackabuse.com/step-by-step-guide-to-file-upload-with-flask/
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
+
+
+
+book it 
+Check Meowt
+
+
+================================================================
+
+making things look nice flashed messages and login routes
+
+http://127.0.0.1:5000/login?next=%2Fprofile
+
+
+
+
+
+
+
+
+    File "C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\app\authentication\routes.py", line 113, in profile
+
+    picture_file = save_picture(form.picture.data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    File "C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\app\authentication\routes.py", line 96, in save_picture
+
+    form_picture.save(picture_path)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    File "C:\Users\treeo\Desktop\CODING TEMPLE SELF PACE\Module 5 Flask\Flask_DigitalLibrary\my_venv\Lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+
+    dst = open(dst, "wb")
+          ^^^^^^^^^^^^^^^
+
+    FileNotFoundError: [Errno 2] No such file or directory: '/images/profile_pics/4ea8a52c7cf9a352.jpg'
