@@ -16,6 +16,8 @@ from PIL import Image
 from os.path import join, dirname, realpath
 from flask import current_app
 
+import logging
+logger = logging.getLogger(__name__)
 
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
@@ -37,6 +39,7 @@ def register():
                 email = form.email.data
                 password = form.password.data
                 print(first_name, last_name, username, email, password, ' Successfully signed up')
+                logger.debug(f"Form Data submitted: first_name={first_name}, last_name={last_name}, username={username}, email={email}, password={password}")
 
                 user = User(email=email, username=username, first_name=first_name, last_name=last_name, password=password, image_file='defaultuser.png')
 
@@ -47,8 +50,14 @@ def register():
                 flash(f'Account created for {form.username.data}!', 'success')
                 return redirect(url_for('auth.login'))
             else:
-                flash('Please make sure to complete the entire form!', 'danger')
+                for field, errors in form.errors.items():
+                    for error in errors:
+                        print(f'Error in field "{field}": {error}')
+                        logger.error(f'Error in field "{field}": {error}')
+                flash(f'There was an error: {error}', 'danger')
+                jsonify({'status': 'error', 'errors': error})
     except:
+        logger.exception(f'An exception occurred: {str(Exception)}')
         raise Exception('Invalid Form Data: Please Check your Form')
     return render_template('register.html', form=form)
 # Cas Mdz casmdz admincas@checkmeowt.org password  Successfully signed up
