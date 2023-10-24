@@ -18,11 +18,12 @@ def add_book(current_user_token):
         format = request.json['format']
         isbn = request.json['isbn']
         genre = request.json['genre']
+        imageSrc = request.json['imageSrc']
         user_token = current_user_token.token
         
         print(f'{current_user_token.first_name} {current_user_token.token} just added a new book')
         
-        book = Book(title, author, publishing, format, isbn, genre, user_token = user_token )
+        book = Book(title, author, publishing, format, isbn, genre, imageSrc, user_token = user_token )
         
         db.session.add(book)
         db.session.commit()
@@ -56,6 +57,7 @@ def get_book():
                     "format": b.format,
                     "isbn": b.isbn,
                     "genre": b.genre,
+                    "imageSrc": b.imageSrc,
                     "bookworm": user_name,
             })
     return jsonify(books_list)
@@ -74,6 +76,7 @@ def get_single_book(id):
             "format": book.format,
             "isbn": book.isbn,
             "genre": book.genre,
+            "imageSrc": book.imageSrc,
             "user_token": book.user_token
         #     does that work???
         }
@@ -98,6 +101,7 @@ def update_book(current_user_token,id):
         book.format = request.json['format']
         book.isbn = request.json['isbn']
         book.genre = request.json['genre']
+        book.imageSrc = request.json['imageSrc']
         
         db.session.commit()
         response = book_schema.dump(book)

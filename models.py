@@ -78,9 +78,10 @@ class Book(db.Model):
     format = db.Column(db.String(50))
     isbn = db.Column(db.String(50))
     genre = db.Column(db.String(150))
+    imageSrc = db.Column(db.String(600))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable=False)
     
-    def __init__(self, title, author, publishing, format, isbn, genre, user_token):
+    def __init__(self, title, author, publishing, format, isbn, genre, imageSrc, user_token):
         # self.id = self.set_id()
         self.title = title
         self.author = author
@@ -88,6 +89,7 @@ class Book(db.Model):
         self.format = format
         self.isbn = isbn
         self.genre = genre
+        self.imageSrc = imageSrc
         self.user_token = user_token
         
     def __repr__(self):
@@ -98,7 +100,7 @@ class Book(db.Model):
     
 class BookSchema(ma.Schema):
     class Meta:
-        fields = ['id', 'title', 'author', 'publishing', 'format', 'isbn', 'genre']
+        fields = ['id', 'title', 'author', 'publishing', 'format', 'isbn', 'genre', 'imageSrc']
         
 book_schema = BookSchema()
 books_schema = BookSchema(many=True)
