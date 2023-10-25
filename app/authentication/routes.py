@@ -18,9 +18,17 @@ from flask import current_app
 
 import logging
 logger = logging.getLogger(__name__)
+from flask_wtf.csrf import CSRFError
+
+# https://www.baeldung.com/postman-send-csrf-token
+# https://flask-wtf.readthedocs.io/en/1.2.x/csrf/
 
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
+
+@auth.errorhandler(CSRFError)
+def handle_csrf_error(e):
+    return render_template('csrf_error.html', reason=e.description), 400
 
 @auth.route('/toast')
 def gettoast():
