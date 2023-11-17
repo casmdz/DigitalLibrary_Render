@@ -18,7 +18,7 @@ from flask import current_app
 
 import logging
 logger = logging.getLogger(__name__)
-from flask_wtf.csrf import CSRFError
+# from flask_wtf.csrf import CSRFError
 
 # https://www.baeldung.com/postman-send-csrf-token
 # https://flask-wtf.readthedocs.io/en/1.2.x/csrf/
@@ -26,9 +26,9 @@ from flask_wtf.csrf import CSRFError
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
 
-@auth.errorhandler(CSRFError)
-def handle_csrf_error(e):
-    return render_template('csrf_error.html', reason=e.description), 400
+# @auth.errorhandler(CSRFError)
+# def handle_csrf_error(e):
+#     return render_template('csrf_error.html', reason=e.description), 400
 
 @auth.route('/toast')
 def gettoast():
@@ -47,7 +47,7 @@ def register():
                 email = form.email.data
                 password = form.password.data
                 print(first_name, last_name, username, email, password, ' Successfully signed up')
-                logger.debug(f"Form Data submitted: first_name={first_name}, last_name={last_name}, username={username}, email={email}, password={password}")
+                logger.debug(f"logger debug - Form Data submitted: first_name={first_name}, last_name={last_name}, username={username}, email={email}, password={password}")
 
                 user = User(email=email, username=username, first_name=first_name, last_name=last_name, password=password, image_file='defaultuser.png')
 
@@ -61,11 +61,11 @@ def register():
                 for field, errors in form.errors.items():
                     for error in errors:
                         print(f'Error in field "{field}": {error}')
-                        logger.error(f'Error in field "{field}": {error}')
+                        logger.error(f'logger - Error in field "{field}": {error}')
                 flash(f'There was an error: {error}', 'danger')
                 jsonify({'status': 'error', 'errors': error})
     except:
-        logger.exception(f'An exception occurred: {str(Exception)}')
+        logger.exception(f'logger - An exception occurred: {str(Exception)}')
         raise Exception('Invalid Form Data: Please Check your Form')
     return render_template('register.html', form=form)
 # Cas Mdz casmdz admincas@checkmeowt.org password  Successfully signed up
